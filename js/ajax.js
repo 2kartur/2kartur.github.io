@@ -1,4 +1,3 @@
-/* Article FructCode.com */
 $( document ).ready(function() {
     $("#btn").click(
         function(){
@@ -10,11 +9,11 @@ $( document ).ready(function() {
 
 function sendAjaxForm(result_form, ajax_form, url) {
     $.ajax({
-        url:     url, //url страницы (action_ajax_form.php)
-        type:     "POST", //метод отправки
-        dataType: "html", //формат данных
-        data: $("#"+ajax_form).serialize(),  // Сеарилизуем объект
-        success: function(response) { //Данные отправлены успешно
+        url:     url, 
+        type:     "POST", 
+        dataType: "html", 
+        data: $("#"+ajax_form).serialize(), 
+        success: function(response) {
             result = $.parseJSON(response);
             $('#result_form').html('' +
                 '<strong>Результат</strong><br><br>\n' +
@@ -22,7 +21,7 @@ function sendAjaxForm(result_form, ajax_form, url) {
                 '<p>Площа фундаменту:'+result.X*result.Y*result.H+' м<sup>2</sup></p>\n' +
                 '<p>Об\'єм бетону:'+result.X*result.Y*result.H*result.A+' м<sup>3</sup></p>');
         },
-        error: function(response) { // Данные не отправлены
+        error: function(response) {
             $('#result_form').html('Помилка. Дані не відправляються');
         }
     });
