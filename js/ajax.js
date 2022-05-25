@@ -23,7 +23,7 @@ function sendAjaxForm(result_form, ajax_form, url) {
                 '<p>Об\'єм бетону:'+result.X*result.Y*result.H*result.A+' м<sup>3</sup></p>');
         },
         error: function(response) { // Данные не отправлены
-            $('#result_form').html('Ошибка. Данные не отправлены.');
+            $('#result_form').html('Помилка. Дані не відправляються');
         }
     });
 }
